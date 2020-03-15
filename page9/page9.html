@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>displayプロパティの理解</title>
+    <link rel="stylesheet" href="page9.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        <div class="midashi">僕のＨＴＭＬ進捗</div>
+      </h1>
+      <nav>
+        <ul>
+          <li id="nav1">NEWS</li>
+          |
+          <li id="nav2"><a href="../page2/page2.html">PROFILE</a></li>
+          |
+          <li id="nav3">CONTACT</li>
+        <ul>
+      </nav>
+    </header>
+    <main>
+      <h1>displayプロパティの理解をしよう(1)</h1>
+      <section>
+        <h2>displayプロパティとは？</h2>
+        <p>
+          displayプロパティとは、レンダリングの際に利用する要素のボックスの種類を指定するプロパティである。初期値はそれぞれの要素で異なる。
+        </p>
+      </section>
+      <section>
+        <h2>block</h2>
+        <p>
+          <span style="color:red">block</span>は<mark>ブロック要素</mark>を生成するため、横幅いっぱいのボックスを形成する
+        </p>
+        <div class="box">
+          ボックス
+          <div class="block">
+            ブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロック
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>inline</h2>
+        <p>
+          <span style="color:red">inline</span>は<mark>インライン要素</mark>を生成するため、その要素と紐づけられた領域（文字列の幅など）のみを占有したボックスを形成する <br>
+          つまり、<span style="text-decoration:underline">幅や高さ</span>を設定できない
+        </p>
+        <div class="box">
+          ボックス
+          <div class="block">
+            ブロックブロックブロックブロックブロックブロックブロックブロックブロック
+            <div class="inline">インライン</div>
+            ブロックブロックブロックブロックブロックブロックブロックブロック
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>inline-block</h2>
+        <p>
+          <span style="color:red">inline-block</span>はインライン要素と同じようにふるまえるが、<mark>ボックス要素</mark>と同じブロックを生成する <br>
+          つまり、<span style="text-decoration:underline">幅や高さ</span>を設定できる
+        </p>
+        <div class="box">
+          ボックス
+          <div class="block">
+            ブロックブロックブロックブロックブロックブロックブロックブロックブロック
+            <div class="inline-block">インライン-ブロック</div>
+            ブロックブロックブロックブロックブロックブロックブロックブロック
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>list-item</h2>
+        <p>
+          <span style="color:red">list-item</span>はブロック要素と同じようにふるまうが、先頭にマーカーとなるブロックを生成する
+        </p>
+        <div class="box">
+          ボックス
+          <div class="block">
+            ブロックブロックブロックブロックブロックブロックブロックブロックブロック
+            <div class="list-item">アイテム</div>
+            <div class="list-item">アイテム</div>
+            <div class="list-item">アイテム</div>
+            ブロックブロックブロックブロックブロックブロックブロックブロック
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>none</h2>
+        <p>
+          <span style="color:red">none</span>は要素を<mark>非表示</mark>にできる <br>
+          そして、その領域すべてがなくなる
+        </p>
+        <div class="box">
+          ボックス
+          <div class="block">
+            ブロックブロックブロックブロックブロックブロックブロックブロックブロック
+            <div class="none">
+              カーソルを合わせよう <br>
+              カーソルを合わせよう <br>
+              カーソルを合わせよう <br>
+            </div>
+            ブロックブロックブロックブロックブロックブロックブロックブロック
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>visibility:hidden</h2>
+        <p>
+          <span style="color:red">visibility:hidden</span>は要素を<mark>非表示</mark>にできる <br>
+          そして、要素が占有していた<mark>領域はそのまま残る</mark>
+        </p>
+        <div class="box">
+          ボックス
+          <div class="block">
+            ブロックブロックブロックブロックブロックブロックブロックブロックブロック
+            <div class="hidden">
+              カーソルを合わせよう <br>
+              カーソルを合わせよう <br>
+              カーソルを合わせよう <br>
+            </div>
+            ブロックブロックブロックブロックブロックブロックブロックブロック
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>table</h2>
+        <p>
+          <span style="color:red">table</span>は要素を<mark>tableタグ</mark>のようにレンダリングできる <br>
+        </p>
+        <div class="table">
+          テーブル
+          <div class="block">
+            ブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロックブロック
+          </div>
+        </div>
+        <p>
+          <br>
+          <br>
+          <br>
+          <br>
+        </p>
+      </section>
+      <section>
+        <h2>table-cell</h2>
+        <p>
+          <span style="color:red">table-cell</span>は要素を<mark>&lt;td&gt;</mark>のようにレンダリングできる <br>
+          つまり、それぞれをカラム（項目）で分けることができる
+        </p>
+        テーブル
+        <div class="table">
+          <div class="table-cell red">
+            カラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラム
+          </div>
+          <div class="table-cell green">
+            カラム
+          </div>
+          <div class="table-cell gray">
+            カラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラム
+          </div>
+        </div>
+        <p>
+          すべての高さ(height)が一緒になるのが利点 <br>
+          幅はwidthで設定できる
+        </p>
+      </section>
+      <section>
+        <h2>vartical-align:middle(上下中央)</h2>
+        <p>
+          <span style="color:red">vatical-align</span>は<mark>インライン要素</mark>と<mark>テーブルセル</mark>のみに有効 <br>
+          <span style="text-decoration:underline">文字の縦方向の位置調整が可能</span>
+        </p>
+        テーブル
+        <div class="table">
+          <div class="table-cell red">
+            カラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラム
+          </div>
+          <div class="table-cell green middle">
+            カラム
+          </div>
+          <div class="table-cell gray">
+            カラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラム
+          </div>
+        </div>
+        <p>
+          greenのtable-cellをmiddleで文字を上下中央に配置している
+        </p>
+      </section>
+      <section>
+        <h2>table-layout</h2>
+        <p>
+          <span style="color:red">table-layout</span>はカラムの幅を固定できる
+        </p>
+        テーブル
+        <div class="table2">
+          <div class="table-cell red">
+            カラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラム
+          </div>
+          <div class="table-cell green">
+            カラム
+          </div>
+          <div class="table-cell gray">
+            カラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラムカラム
+          </div>
+        </div>
+        <p>
+          テーブル全体の幅は300pxになっている <br>
+          しかし、<mark>paddingを加えるとその分まで内側が大きくなってしまう</mark> <br>
+          なので、<span style="color:red">box-sizing:border-box</span>にすることで<span style="text-decoration:underline">borderとpaddingが含まれた状態でテーブル全体で300pxに設定することができる</span>
+        </p>
+      </section>
+      <section>
+        <h2>flexboxプロパティ</h2>
+        <p>
+          tableベースのレイアウトからfloatを用いたレイアウトになり、今はこの<span style="color:red">flexbox</span>を使うことで複雑なレイアウトが可能になった <br>
+          Flexが指定された要素を<strong>Flex container（Flexコンテナ)</strong>と呼び、その子要素を<strong>Flex item（Flexアイテム）</strong>と呼ぶ（孫要素は影響を受けない）
+        </p>
+        <div class="flex">
+          <div class="flex-item h10">1</div>
+          <div class="flex-item h30">2</div>
+          <div class="flex-item h60">3</div>
+          <div class="flex-item h20">4</div>
+          <div class="flex-item h40">5</div>
+        </div>
+      </section>
+      <section>
+        <h2>flex-wrap</h2>
+        <p>
+          flexの<span style="color:red">flex-wrap</span>の値を設定することで次のことができる <br>
+          これを設定しないと、<mark>flex-itemのwidthが反映されない場合がある</mark> <br>
+          初期値は、<mark>nowrap</mark>である
+          <ul>
+            <li>wrap</li>改行する
+            <li>nowrap</li>改行しない
+            <li>wrap-reverse</li>wrapと同じだが、並び順が逆になる
+          </ul>
+        </p>
+        <div class="flex2">
+          <div class="flex-item h10">1</div>
+          <div class="flex-item h30">2</div>
+          <div class="flex-item h60">3</div>
+          <div class="flex-item h20">4</div>
+          <div class="flex-item h40">5</div>
+        </div>
+      </section>
+      <section>
+        <h2>flex-direction</h2>
+        <p>
+          flexの<span style="color:red">flex-direction</span>の値を設定することで次のことができる <br>
+          初期値は、<mark>row</mark>である
+          <ul>
+            <li>row</li>左から右に配置される
+            <li>row-reverse</li>rowと同じだが順番が逆になる
+            <li>column</li>上から下に配置される
+            <li>column</li>columnと同じだが順番が逆になる
+          </ul>
+        </p>
+        <div class="direction">
+          row-reverse <br>
+          <div class="flex3 row-reverse">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          column <br>
+          <div class="flex3 column">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          column-reverse <br>
+          <div class="flex3 column-reverse">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>justify-content</h2>
+        <p>
+          flexの<span style="color:red">justify-content</span>の値を設定することで次のことができる <br>
+          初期値は、<mark>flex-start</mark>である
+          <ul>
+            <li>flex-start</li>
+              flex-itemを<mark>始端</mark>に集める
+            <li>flex-end</li>
+              flex-itemを<mark>終端</mark>に集める
+            <li>center</li>
+              flex-itemを<mark>中央</mark>に集めます
+            <li>space-between</li>
+              flex-itemを<mark>均等に配置</mark>。最初のアイテムは始端に
+              最後のアイテムは終端に配置される
+            <li>space-around</li>
+             space-betweenと同じだが、最初のアイテムと始端間と、最後のアイテムと終端間のスペースが、<mark>各アイテム間のスペースの半分になる</mark>
+             <li>space-evenly</li>
+              space-betweenと同じだが、最初のアイテムと始端間と、最後のアイテムと終端間のスペースが、<mark>各アイテム間のスペースと同じになる</mark>
+          </ul>
+        </p>
+        <div class="content">
+          flex-end <br>
+          <div class="flex4 flex-end">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          center <br>
+          <div class="flex4 center">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          space-between <br>
+          <div class="flex4 space-between">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          space-around <br>
+          <div class="flex4 space-around">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          space-evenly <br>
+          <div class="flex4 space-evenly">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>align-items</h2>
+        <p>
+          flexの<span style="color:red">align-items</span>の値を設定することで次のことができる <br>
+          初期値は、<mark>stretch</mark>である
+          <ul>
+            <li>flex-start</li>
+              flex-itemを<mark>上部</mark>に集める
+            <li>flex-end</li>
+              flex-itemを<mark>下部</mark>に集める
+            <li>center</li>
+              flex-itemを<mark>中央</mark>に集めます
+            <li>stretch</li>
+              flex-itemを<mark>コンテナいっぱい</mark>に広がる
+          </ul>
+        </p>
+        <div class="content">
+          flex-start <br>
+          <div class="flex4 flex-start">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          flex-end <br>
+          <div class="flex4 flex-end2">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          center <br>
+          <div class="flex4 center2">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          stretch <br>
+          <div class="flex4 stretch">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>align-content</h2>
+        <p>
+          flexの<span style="color:red">align-content</span>の値を設定することで次のことができる <br>
+          しかし、<strong>Flexコンテナに余白がある場合のみ有効</strong>になる <br>
+          初期値は、<mark>stretch</mark>である
+          <ul>
+            <li>flex-start</li>
+              flex-itemを<mark>上部</mark>に集める
+            <li>flex-end</li>
+              flex-itemを<mark>下部</mark>に集める
+            <li>center</li>
+              flex-itemを<mark>中央</mark>に集めます
+            <li>space-between</li>
+              flex-itemを<mark>均等に配置</mark>。最初のアイテムは始端に
+              最後のアイテムは終端に配置される
+            <li>space-around</li>
+             space-betweenと同じだが、最初のアイテムと始端間と、最後のアイテムと終端間のスペースが、<mark>各アイテム間のスペースの半分になる</mark>
+             <li>stretch</li>
+              space-betweenと同じだが、最初のアイテムと始端間と、最後のアイテムと終端間のスペースが、<mark>各アイテム間のスペースと同じになる</mark>
+          </ul>
+        </p>
+        <div class="content">
+          flex-start <br>
+          <div class="flex5 flex-start2">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          flex-end <br>
+          <div class="flex5 flex-end3">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          center <br>
+          <div class="flex5 center3">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          space-between <br>
+          <div class="flex5 space-between2">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+          space-around <br>
+          <div class="flex5 space-around2">
+            <div class="flex-item h10">1</div>
+            <div class="flex-item h30">2</div>
+            <div class="flex-item h60">3</div>
+            <div class="flex-item h20">4</div>
+            <div class="flex-item h40">5</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>order</h2>
+        <p>
+          <span style="color:red">order</span>プロパティの値を設定することで、flex-itemの順番を変更できる <br>
+          <mark>初期値は０</mark>である
+        </p>
+        <div class="flex5">
+          <div class="flex-item h10">1</div>
+          <div class="flex-item h30">2</div>
+          <div class="flex-item h60 target">3</div>
+          <div class="flex-item h20">4</div>
+          <div class="flex-item h40">5</div>
+        </div>
+        <p>
+          3のorderを-1にした
+        </p>
+      </section>
+      <section>
+        <h2>flex-grow</h2>
+        <p>
+          <span style="color:red">flex-grow</span>プロパティの値を設定することで、flex-itemの占有する幅を変更できる <br>
+          flexコンテナの余白がない場合は機能しない
+        </p>
+        <div class="flex5">
+          <div class="flex-item h10">1</div>
+          <div class="flex-item h30">2</div>
+          <div class="flex-item h60 target grow">3</div>
+          <div class="flex-item h20">4</div>
+          <div class="flex-item h40">5</div>
+        </div>
+        <p>
+          3のflex-growを1にした
+        </p>
+      </section>
+      <section>
+        <h2>align-self</h2>
+        <p>
+          <span style="color:red">align-self</span>プロパティの値を設定することで、align-itemsと同じものを利用できる <br>
+        </p>
+        <div class="flex5">
+          <div class="flex-item h10">1</div>
+          <div class="flex-item h30">2</div>
+          <div class="flex-item h60 target grow self">3</div>
+          <div class="flex-item h20">4</div>
+          <div class="flex-item h40">5</div>
+        </div>
+        <p>
+          3のalign-selfをflex-endにした
+        </p>
+      </section>
+    </main>
+    <aside>
+      <div class="advertise">
+        <h2>今回のおすすめキャラ!!</h2>
+        <h3></h3>
+        <p>
+
+        </p>
+        <img src="" alt="の画像">
+        <h3>おすすめシーン</h3>
+        <p>
+          <h4>クール目:</h4> <br> <br>
+          　<br> <br> <br>
+        </p>
+        <img src="" alt="の画像">
+          <p>
+            <h4>クール目:</h4> <br>　<br>
+
+          <img src="" alt="の画像">
+          </p>
+      </div>
+    </aside>
+    <footer>
+      <a href="../page8/page8.html">（←前のページへ）</a>
+      <a href="../page10/page10.html">（→次のページへ）</a>
+      <a href="page9.html">（↑ページの先頭へ）</a>
+    </footer>
+  </body>
+</html>
